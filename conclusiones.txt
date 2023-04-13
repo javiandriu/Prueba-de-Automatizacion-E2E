@@ -1,0 +1,19 @@
+Las pruebas E2E se encuentran en la punta de la pirámide de pruebas. Existen varias herramientas de automatización, como por ejemplo, Cypress, entre otras.
+
+Para esta prueba E2E se usó Cypress. Esta herramienta se maneja con JavaScript como lenguaje de programación. 
+Una de sus ventajas es que tiene su propia interfaz gráfica, la cual se puede visualizar mientras los scripts de prueba se ejecutan nuevamente al ingresar nuevo código.
+
+Dentro de esta evaluación se abordaron los siguientes requerimientos establecidos:
+
+1.Agregar dos productos al carrito.
+2.Visualizar el carrito.
+3.Completar el “Checkout” como invitado: “Guest Checkout”.
+4.Finalizar la compra hasta la confirmación: “Your order has been placed!”.
+
+Cada uno de estos criterios fueron abordados en diferentes Page Objects e implementados en el archivo openCart.cy.js, el cual es nuestro test de prueba.
+Al ejecutarse la prueba E2E se reproduce un bug aleatorio que es causado por el tiempo que la UI se demora en cargar.
+Cypress nos indica que no es un problema causado por el tester sino por la UI.
+Se trabajó junto a la documentación de Cypress para poder arreglar este bug, usando comandos como cy.wait() para aumentar el tiempo de espera en el cambio de rutas.
+También se utilizó Cypress.on() para capturar el error y hacer que la aplicación termine de ejecutarse mostrando el error para que el desarrollador pueda corregirlo al momento de devolverle la tarea.
+De manera adicional, para garantizar que el trabajo realizado no tiene fallas en el código hecho por el tester, se hizo una grabación donde se visualiza que en el momento que el bug no aparece la prueba se termina de ejecutar con normalidad.
+
